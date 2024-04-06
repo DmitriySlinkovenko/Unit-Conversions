@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>List of Equivalents</title>
+    <link rel="stylesheet" href="./styles/index.css" />
+  </head>
+  <body class="body">
+    <div class="button__container">
+      <button class="button" type="button" id="volume__open">
+        Volume calculations
+      </button>
+      <button class="button" type="button" id="weight__open">
+        Weight Calculations
+      </button>
+      <button class="button" type="button" id="length__open">
+        Length Calculations
+      </button>
+    </div>
+    <modal class="modal" id="volume">
+      <p class="result" id="volume-result">Result</p>
+      <input type="number" class="number__box" id="volumeInput" />
+      <div class="modal__containter">
+        <div>
+          <input type="radio" name="volume" id="L-ml" />
+          <label for="L-ml">Liter to Mililiter</label>
+        </div>
+        <div>
+          <input type="radio" name="volume" id="ml-L" />
+          <label for="ml-L">Mililiter to Liter</label>
+        </div>
+        <div>
+          <input type="radio" name="volume" id="ml-microdrops" />
+          <label for="ml-microdrops">Mililiter to Microdrops</label>
+        </div>
+        <div>
+          <input type="radio" name="volume" id="microdrops-ml" />
+          <label for="microdrops-ml">Microdrops to Mililiter</label>
+        </div>
+        <div>
+          <input type="radio" name="volume" id="ounce-ml" />
+          <label for="ounce-ml">Ounce to Mililiter</label>
+        </div>
+        <div>
+          <input type="radio" name="volume" id="ml-ounce" />
+          <label for="ml-ounce">Mililiter to Ounce</label>
+        </div>
+        <div>
+          <input type="radio" name="volume" id="tbsp-ml" />
+          <label for="tbsp-ml">Tablespoon to Mililiter</label>
+        </div>
+        <div>
+          <input type="radio" name="volume" id="ml-tbsp" />
+          <label for="ml-tbsp">Mililiter to Tablespoon</label>
+        </div>
+        <div>
+          <input type="radio" name="volume" id="tbsp-tsp" />
+          <label for="tbsp-tsp">Tablespoon to Teaspoon</label>
+        </div>
+        <div>
+          <input type="radio" name="volume" id="tsp-tbsp" />
+          <label for="tsp-tbsp">Teaspoon to Tablespoon</label>
+        </div>
+        <div>
+          <input type="radio" name="volume" id="tsp-ml" />
+          <label for="tsp-ml">Teaspoon to Mililiter</label>
+        </div>
+        <div>
+          <input type="radio" name="volume" id="ml-tsp" />
+          <label for="ml-tsp">Mililiter to Teaspoon</label>
+        </div>
+        <div>
+          <input type="radio" name="volume" id="cup-ounce" />
+          <label for="cup-ounce">Cup to Ounce</label>
+        </div>
+        <div>
+          <input type="radio" name="volume" id="ounce-cup" />
+          <label for="ounce-cup">Ounce to Cup</label>
+        </div>
+        <div>
+          <input type="radio" name="volume" id="pint-ounce" />
+          <label for="pint-ounce">Pint to Ounce</label>
+        </div>
+        <div>
+          <input type="radio" name="volume" id="ounce-pint" />
+          <label for="ounce-pint">Ounce to Pint</label>
+        </div>
+        <div>
+          <input type="radio" name="volume" id="quart-ounce" />
+          <label for="quart-ounce">Quart to Ounce</label>
+        </div>
+        <div>
+          <input type="radio" name="volume" id="ounce-quart" />
+          <label for="ounce-quart">Ounce to Quart</label>
+        </div>
+        <div>
+          <input type="radio" name="volume" id="quart-pints" />
+          <label for="quart-pints">Quart to Pints</label>
+        </div>
+        <div>
+          <input type="radio" name="volume" id="pints-quart" />
+          <label for="pints-quart">Pints to Quart</label>
+        </div>
+      </div>
+      <button type="button" class="button" onclick="convertVolume()">
+        Calculate
+      </button>
+      <button class="close" id="volume-close"></button>
+    </modal>
+    <modal class="modal" id="weight">
+      <p class="result" id="weight-result">Result</p>
+      <input type="number" class="number__box" id="weightInput" />
+      <div class="modal__containter">
+        <div>
+          <input type="radio" name="volume" id="gram-mg" />
+          <label for="gram-mg">Gram to Miligram</label>
+        </div>
+        <div>
+          <input type="radio" name="volume" id="mg-gram" />
+          <label for="mg-gram">Miligram to Gram</label>
+        </div>
+        <div>
+          <input type="radio" name="volume" id="mg-mcg" />
+          <label for="mg-mcg">Miligram to Microgram</label>
+        </div>
+        <div>
+          <input type="radio" name="volume" id="mcg-mg" />
+          <label for="mcg-mg">Microgram to Miligram</label>
+        </div>
+        <div>
+          <input type="radio" name="volume" id="kg-pound" />
+          <label for="kg-pound">Kilogram to Pound</label>
+        </div>
+        <div>
+          <input type="radio" name="volume" id="pound-kg" />
+          <label for="pound-kg">Pound to Kilogram</label>
+        </div>
+        <div>
+          <input type="radio" name="volume" id="pound-ounce" />
+          <label for="pound-ounce">Pound to Ounce</label>
+        </div>
+        <div>
+          <input type="radio" name="volume" id="ounce-pound" />
+          <label for="ounce-pound">Ounce to Pound</label>
+        </div>
+      </div>
+      <button
+        type="button"
+        class="button"
+        id="calculate__weight"
+        onclick="convertWeight()"
+      >
+        Calculate
+      </button>
+      <button class="close" id="weight-close"></button>
+    </modal>
+    <modal class="modal" id="length">
+      <p class="result" id="length-result">Result</p>
+      <input type="number" class="number__box" id="lengthInput" />
+      <div class="modal__containter">
+        <div>
+          <input type="radio" name="volume" id="inch-cm" />
+          <label for="inch-cm">Inch to Centimeter</label>
+        </div>
+        <div>
+          <input type="radio" name="volume" id="cm-inch" />
+          <label for="cm-inch">Centimeter to Inch</label>
+        </div>
+        <div>
+          <input type="radio" name="volume" id="foot-inch" />
+          <label for="foot-inch">Foot to Inch</label>
+        </div>
+        <div>
+          <input type="radio" name="volume" id="inch-foot" />
+          <label for="inch-foot">Inch to Foot</label>
+        </div>
+      </div>
+      <button
+        type="button"
+        class="button"
+        id="calculate__length"
+        onclick="convertLength()"
+      >
+        Calculate
+      </button>
+      <button class="close" id="length-close"></button>
+    </modal>
+    <script src="./scripts/index.js"></script>
+  </body>
+</html>
